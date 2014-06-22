@@ -8,10 +8,20 @@
 </head>
 <body>
 <header>
-  <h1>Good Eats</h1>
+  <div class="container">
+    <h1><%= link_to "Good Eats", restaurants_path %></h1>
+    <ul class="nav">
+      <li><%= link_to "Restaurants", restaurants_path %></li>
+      <li><%= link_to "Submit New", new_restaurant_path %></li>
+    </ul>
+  </div>
 </header>
 
-<%= yield %>
+<article>
+  <div class="container">
+    <%= yield %>
+  </div>
+</article>
 
 </body>
 </html>

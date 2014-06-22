@@ -1,0 +1,87 @@
+@import url('http://fonts.googleapis.com/css?family=Lato:400,700,400italic|Playfair+Display:400,700,400italic,700italic');
+
+body {
+  background: $canvas-lt;
+  font-family: $font-secondary;
+}
+
+.container {
+  @include container(90%);
+  overflow: hidden;
+  padding: 1% 4%;
+}
+
+header {
+  background: $primary;
+  height: 4rem;
+  max-height: 200px;
+  font-family: $font-primary;
+
+    h1 {
+      @include span-columns(6, 10);
+      font-size: 2.5rem;
+      text-transform: uppercase;
+
+      a {
+          color:  lighten($canvas, 10%);
+          text-decoration: none;
+      }
+    }
+
+    ul.nav {
+
+      @include span-columns(4 omega, 10);
+      @include horizontal-list;
+      padding-top: 1%;
+
+      a {
+        @include link-colors($canvas-lt,$secondary-lt,$canvas,$canvas);
+        display: block;
+        text-decoration: none;
+        padding-right: 1em;
+        font-size: 1.25rem;
+        font-weight: 700;
+        font-style: italic;
+      }
+    }
+
+}
+
+article {
+
+   .container > h2 {
+    font-family: $font-primary;
+    color: $primary;
+    font-weight: 700;
+    font-size: 1.15rem;
+  }
+
+  .restaurant {
+    @include span-columns(4, 10);
+    @include border-radius(2px 4px);
+    background-color: #fff;
+    font-size: 0.7rem;
+    margin-top: 2%;
+    padding: 2.5%;
+    line-height: 2em;
+
+     h1 a {
+        @include link-colors($primary,$secondary,$warning,$secondary-lt);
+        text-decoration: none;
+        font-weight: 900;
+      }
+
+      h2 {
+        font-weight: 700;
+        display: inline;
+      }
+  }
+}
+
+.submit-new form {
+  @include span-columns(10, 10);
+
+  label {
+    width: 100%;
+  }
+}

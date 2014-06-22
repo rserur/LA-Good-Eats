@@ -1,4 +1,5 @@
-<%= form_for(@restaurant) do |f| %>
+<div class="submit-new">
+   <%= form_for(@restaurant) do |f| %>
 
   <% if @restaurant.errors.any? %>
     <h3><%= pluralize(@restaurant.errors.count, "error") %>
@@ -19,7 +20,7 @@
   <%= f.text_area :description %>
 
   <%= f.label :category %>
-  <%= collection_select(:category, :category_id, Category.all, :id, :name) %>
+  <%= collection_select(:restaurant, :category_id, Category.all, :id, :name) %>
 
   <%= f.label :address %>
   <%= f.text_field :address %>
@@ -33,6 +34,7 @@
   <%= f.label :zip %>
   <%= f.text_field :zip %>
 
-  <%= f.submit 'Submit' %>
+  <%= f.submit %>
 
   <% end %>
+</div>
