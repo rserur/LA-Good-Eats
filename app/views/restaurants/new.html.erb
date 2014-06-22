@@ -1,4 +1,5 @@
-<div class="submit-new">
+
+<h2>Submit New Restaurant</h2>
    <%= form_for(@restaurant) do |f| %>
 
   <% if @restaurant.errors.any? %>
@@ -13,28 +14,36 @@
 
   <% end%>
 
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-
-  <%= f.label :description %>
-  <%= f.text_area :description %>
-
-  <%= f.label :category %>
-  <%= collection_select(:restaurant, :category_id, Category.all, :id, :name) %>
-
-  <%= f.label :address %>
-  <%= f.text_field :address %>
-
-  <%= f.label :city %>
-  <%= f.text_field :city %>
-
-  <%= f.label :state %>
-  <%= f.select :state, options_for_select(us_states) %>
-
-  <%= f.label :zip %>
-  <%= f.text_field :zip %>
-
-  <%= f.submit %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :description %>
+    <%= f.text_area :description, rows: 5 %>
+  </p>
+  <p>
+    <%= f.label :category %>
+    <%= collection_select(:restaurant, :category_id, Category.all, :id, :name) %>
+  <p>
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+  </p>
+  <p>
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+  </p>
+  <p>
+    <%= f.label :state %>
+    <%= f.select :state, options_for_select(us_states) %>
+  </p>
+  <p>
+    <%= f.label :zip %>
+    <%= f.text_field :zip %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
 
   <% end %>
 </div>

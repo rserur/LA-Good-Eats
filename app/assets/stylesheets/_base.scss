@@ -52,6 +52,9 @@ header {
 
 article {
 
+    a {
+    @include link-colors($secondary-lt,$secondary-lt,$canvas,$secondary);
+  }
 
    .container > h2 {
     font-family: $font-secondary;
@@ -59,7 +62,7 @@ article {
     color: $primary;
     font-weight: 700;
     font-size: 1.15rem;
-    margin: 2% 0;
+    padding: 2% 0;
   }
 
   h3 {
@@ -70,8 +73,20 @@ article {
     color: $secondary;
   }
 
+
+  h4 {
+    font-size: 0.85rem;
+    color: darken($primary, 10%);
+    margin-bottom: 1em;
+  }
+
+  p {
+    margin-bottom: 1%;
+  }
+
+
   .restaurant {
-    @include span-columns(5, 12);
+    @include span-columns(6, 12);
     font-size: 0.8rem;
     line-height: 1.5em;
     margin-bottom: 1.25em;
@@ -87,11 +102,17 @@ article {
         font-weight: 700;
         display: inline;
       }
+
   }
 
   .review {
     font-size: 0.8rem;
-    margin: 2% 0;
+    margin: 3% 0;
+
+    em {
+      font-style: italic;
+      font-size: 0.7rem;
+    }
 
     .fa-star {
       color: darken($canvas, 35%);
@@ -99,10 +120,30 @@ article {
   }
 }
 
-.submit-new form {
-  @include span-columns(12, 12);
+form {
+  color: darken($muted, 30%);
+
+  h1 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+  }
 
   label {
-    width: 100%;
+    display: block;
+    font-size: 0.8rem;
+
+  }
+
+  input, select, textarea {
+    width: $column-width * 6;
+    margin-bottom: 1%;
+    border: 1px solid lighten($muted,40%);
+  }
+
+  input[type=submit] {
+    background-color: lighten($muted, 15%);
+    color: #fff;
+    font-weight: 900;
+    height: 3em;
   }
 }

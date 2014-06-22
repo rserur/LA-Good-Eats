@@ -1,8 +1,13 @@
 class RestaurantsController < ApplicationController
 
-  # GET /restaurants - list of restaurants
+  # GET / - list 10 most recent
+  def root
+    @restaurants = Restaurant.last(10).reverse
+  end
+
+  # GET /restaurants - list of all restaurants
   def index
-    @restaurants = Restaurant.all.order(created_at: :desc)
+    @restaurants = Restaurant.all.order(name: :asc)
   end
 
   # GET /restaurants/new - form display to create restaurant
@@ -25,8 +30,6 @@ class RestaurantsController < ApplicationController
   def show
     @restaurant = Restaurant.find(params[:id])
   end
-
-  # GET /restaurants/:id/reviews/new - form display to review restaurant
 
   private
 

@@ -1,19 +1,28 @@
 <h2><%= @restaurant.name %></h2>
-<h3><%= @restaurant.address %><br/>
+<h3><%= "#{'Cuisine: '}" + @restaurant.category.name if @restaurant.category %></h3>
+<h4>Address:<br/>
+<%= @restaurant.address %><br/>
 <%= @restaurant.city %>,
 <%= @restaurant.state %>
-<%= @restaurant.zip %></h3>
-<%= "#{'Cuisine: '}" + @restaurant.category.name if @restaurant.category %>
-<p><%= @restaurant.description %></p>
+<%= @restaurant.zip %></h4>
+
+<p class="description">
+Description:<br/>
+<%= @restaurant.description %></p>
 
 <% @restaurant.reviews.each do |review| %>
   <div class="review">
     <p class="rating" data-score="<%= review.rating %>"></p>
-    <p><%= review.body %></p>
+    <p>
+      <%= review.body %>
+    </p>
+    <p>
+      <em><%= review.created_at.time.to_formatted_s(:short)  %></em>
+    </p>
   </div>
   <% end %>
 
-<%= link_to "Add Review", new_restaurant_review_path(@restaurant) %>
+<p><%= link_to "Add Review", new_restaurant_review_path(@restaurant) %></p>
 
 <script>
   $(document).ready(function() {
