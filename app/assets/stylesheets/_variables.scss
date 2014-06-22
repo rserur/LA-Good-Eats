@@ -1,6 +1,6 @@
 $primary: #A40D2B;
 $secondary: #37374E;
-$secondary-lt: lighten($secondary, 40%);
+$secondary-lt: lighten($secondary, 30%);
 $canvas: #FEF1C4;
 $canvas-lt: lighten($canvas, 10%);
 $canvas-dk: darken($canvas, 5%);
@@ -8,4 +8,4 @@ $warning: #A71025;
 $muted: #AD6D3A;
 
 $font-primary: 'Playfair Display', serif;
-$font-secondary: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+$font-secondary: 'Lato', sans-serif;

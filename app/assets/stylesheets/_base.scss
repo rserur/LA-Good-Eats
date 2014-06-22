@@ -1,4 +1,6 @@
 @import url('http://fonts.googleapis.com/css?family=Lato:400,700,400italic|Playfair+Display:400,700,400italic,700italic');
+@import url('http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css');
+
 
 body {
   background: $canvas-lt;
@@ -8,67 +10,77 @@ body {
 .container {
   @include container(90%);
   overflow: hidden;
-  padding: 1% 4%;
+  padding: 5%;
 }
 
 header {
-  background: $primary;
   height: 4rem;
-  max-height: 200px;
   font-family: $font-primary;
 
     h1 {
-      @include span-columns(6, 10);
+      @include span-columns(4, 12);
       font-size: 2.5rem;
       text-transform: uppercase;
 
       a {
-          color:  lighten($canvas, 10%);
+          color:  $primary;
           text-decoration: none;
       }
     }
 
     ul.nav {
 
-      @include span-columns(4 omega, 10);
-      @include horizontal-list;
+      @include span-columns(8 omega, 12);
+      @include horizontal-list(false, right);
       padding-top: 1%;
 
       a {
-        @include link-colors($canvas-lt,$secondary-lt,$canvas,$canvas);
-        display: block;
+        @include link-colors($primary,$secondary-lt,$canvas,$primary);
         text-decoration: none;
-        padding-right: 1em;
         font-size: 1.25rem;
         font-weight: 700;
         font-style: italic;
       }
+
+      li {
+        padding-left: 2em;
+      }
+
     }
 
 }
 
 article {
 
+
    .container > h2 {
-    font-family: $font-primary;
+    font-family: $font-secondary;
+    text-transform: uppercase;
     color: $primary;
     font-weight: 700;
     font-size: 1.15rem;
+    margin: 2% 0;
+  }
+
+  h3 {
+    font-style: italic;
+    margin-top: 1%;
+    margin-bottom: 2%;
+    font-size: .95em;
+    color: $secondary;
   }
 
   .restaurant {
-    @include span-columns(4, 10);
-    @include border-radius(2px 4px);
-    background-color: #fff;
-    font-size: 0.7rem;
-    margin-top: 2%;
-    padding: 2.5%;
-    line-height: 2em;
+    @include span-columns(5, 12);
+    font-size: 0.8rem;
+    line-height: 1.5em;
+    margin-bottom: 1.25em;
 
      h1 a {
         @include link-colors($primary,$secondary,$warning,$secondary-lt);
         text-decoration: none;
-        font-weight: 900;
+        font-weight: 700;
+        font-size: 1rem;
       }
 
       h2 {
@@ -76,10 +88,19 @@ article {
         display: inline;
       }
   }
+
+  .review {
+    font-size: 0.8rem;
+    margin: 2% 0;
+
+    .fa-star {
+      color: darken($canvas, 35%);
+    }
+  }
 }
 
 .submit-new form {
-  @include span-columns(10, 10);
+  @include span-columns(12, 12);
 
   label {
     width: 100%;
